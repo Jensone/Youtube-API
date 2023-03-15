@@ -17,7 +17,8 @@ const ytURL = function(){
         .then(response => response.json())
         .then(video => {
             console.log(video)
-            document.querySelector('.thumb').innerHTML=`<img src="${video.thumb}" alt="${video.title}">`
+            window.open(video.thumb.replace(/\/mqdefault\.jpg$/, '/maxresdefault.jpg'), '_blank').focus()
+            // document.querySelector('.thumb').innerHTML=`<img src="${video.thumb}" alt="${video.title}">`
         })
         .catch(err => console.error(err))
 }
